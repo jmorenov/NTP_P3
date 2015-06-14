@@ -18,6 +18,14 @@ public class Function {
     private Value f;
     private ArrayList<Variable> vars = new ArrayList<>();
     
+    public Function(Function f1) {
+        n_vars = f1.n_vars;
+        f = f1.getFunction();
+        vars.clear();
+        for(int i=0; i<f1.n_vars; i++)
+            vars.add(f1.getVar(i));
+    }
+    
     public Function(int n_vars) {
         initVars(n_vars);
     }

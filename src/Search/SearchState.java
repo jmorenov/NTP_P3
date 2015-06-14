@@ -34,10 +34,12 @@ public class SearchState extends Observable {
     }
 
     public synchronized void update(Function f) {
-        this.value = f.result();
-        this.f = f;
-        valueChanged();
-        System.out.println("New Value: "+value);
+        if(value < f.result()) {
+            this.f = new Function(f);
+            this.value = this.f.result();
+            System.out.println("New Value: "+value);
+            valueChanged();
+        }
     }
 
     public double getValue() {

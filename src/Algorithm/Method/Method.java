@@ -9,6 +9,7 @@ import Function.*;
 import Search.SearchState;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Random;
 
 /**
  *
@@ -24,14 +25,14 @@ public abstract class Method implements Observer {
     }
     
     public void newValue(Function f) {
-        if(f.result() > value)
+        if(f.result() > SearchState.getInstance().getValue())
             SearchState.getInstance().update(f);
     }
     
     @Override
     public void update(Observable o, Object arg) {
         if (o instanceof SearchState) {
-            value = ((SearchState) o).getValue();
+            //value = ((SearchState) o).getValue();
         }
     }
     
@@ -39,4 +40,10 @@ public abstract class Method implements Observer {
     public abstract String toString();
     
     public abstract double start(Function f);
+    
+    public static double randDouble(double min, double max) {
+        Random rand = new Random();
+        double randomValue = min + (max - min) * rand.nextDouble();
+        return randomValue;
+    }
 }

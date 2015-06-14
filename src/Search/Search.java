@@ -8,8 +8,6 @@ package Search;
 import Algorithm.*;
 import Function.*;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.concurrent.*;
 
 /**
@@ -41,7 +39,6 @@ public class Search {
     
     private class AlgorithmRunnable implements Runnable {
         private final Algorithm a;
-        private double value;
         
         public AlgorithmRunnable(Algorithm a) {
             this.a = a;

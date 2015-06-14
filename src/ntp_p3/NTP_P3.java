@@ -36,7 +36,7 @@ public class NTP_P3 {
         Search e = new Search();
         e.setFunction(f);
         e.addAlgorithm(new Algorithm(new RandomSearch(10000)));
-        e.addAlgorithm(new Algorithm(new RandomSearch(10000)));
+        e.addAlgorithm(new Algorithm(new SimulatedAnnealing()));
         e.start();
     }
     

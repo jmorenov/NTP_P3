@@ -6,21 +6,17 @@
 package Algorithm.Method;
 
 import Function.*;
-import java.util.Random;
 
 /**
  *
  * @author jmorenov
  */
 public class RandomSearch extends Method {
-    
-    private final Random rand;
     private final int n_iter;
     
     public RandomSearch(int n_iter) {
         super();
         this.n_iter = n_iter;
-        rand = new Random();
     }
     
     @Override
@@ -32,8 +28,7 @@ public class RandomSearch extends Method {
     public double start(Function f) {
         for(int n = 0; n < n_iter; n++) {
             for(int i = 0; i < f.n_vars; i++) {
-                double r = f.getVar(i).range.max - f.getVar(i).range.min;
-                f.getVar(i).setValue((rand.nextDouble()*r) + f.getVar(i).range.min);
+                f.getVar(i).setValue(randDouble(f.getVar(i).range.min, f.getVar(i).range.max));
             }
             newValue(f);
         }
