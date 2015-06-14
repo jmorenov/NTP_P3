@@ -61,14 +61,17 @@ emph={function, while, end, if, for},emphstyle=\color{Blue},escapeinside=||}
 
 \section{Introducción}
 
-
-\newpage
+La práctica pedía la implementación de un método de búsqueda de máximo valor para funciones complejas para las que las técnica analíticas de optimización no funcionan. Para ello se han implementado dos algoritmos de búsqueda: búsqueda aleatoria y recocido simulado.
 \section{Diseño}
+\subsection{Explicación}
+El diseño que se ha seguido incluye la utilización de 3 patrones de diseño: Singleton, Observer y Decorator. Las clases principales son: Function, Search y Algorithm.\\\\
+\textbf{Clase Function:} Es la clase encargada de crear las funciones y controlar los valores de las variables, usa una clase interior de nombre Value para gestionar los operadores y los resultados de las operaciones, en esta clase uso el patrón Decorator para conseguir devolver el resultado de las operaciones directamente sin tener que modificar en el código las diferentes operaciones.\\\\
+\textbf{Clase Algorithm:} Es la clase encargada de crear y gestionar los algoritmos de búsqueda, usa la clase Method que es de la que heredan los diferentes algoritmos de búsqueda (métodos), por ejemplo RandomSearch es una clase que hereda de Method. La clase Method además implementa el patrón Observer al usar la interfaz Observer para poder notificar y recibir las actualizaciones que los otros métodos en ejecición hacen en la clase SearchState, la cual hereda de la clase Observable.\\\\
+\textbf{Clase Search:} Es la clase principal, la cual recibe la función a optimizar y los algoritmos de búsqueda que tiene que usar, devuelve cuando termina el mejor valor encontrado y la función que lo genera. Además incluye la clase AlgorithmRunnable que implementa la interfaz Runnable para poder ejecutar los diferentes algoritmos de búsqueda en forma paralela mediante el servicio ExecutorService.
+
 \subsection{Diagrama de clases}
 \includegraphics[scale=0.4]{diagram.jpg}
-\subsection{Explicación}
-Patrones usados
-Clases definidas
+
 
 \newpage
 \section{Ejemplo de uso}
