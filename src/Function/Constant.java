@@ -1,17 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Function;
 
 /**
- *
- * @author jmorenov
+ * Clase para crear una constante como valor de una función.
+ * 
+ * @author Javier Moreno <jmorenov@correo.ugr.es>
  */
 public class Constant extends Value {
+    
+    // Valor de la constante.
     private final double value;
     
+    /**
+     * Constructor de la constante.
+     * @param v 
+     */
     public Constant(double v) {
         value = v;
     }

@@ -1,19 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Function.Operator;
 
 import Function.Value;
 
 /**
- *
- * @author jmorenov
+ * Clase para crear un operador seno.
+ * 
+ * @author Javier Moreno <jmorenov@correo.ugr.es>
  */
 public class Sin extends Operator {
+    
+    // Valor agumento del seno.
     Value f;
     
+    /**
+     * Constructor de la clase.
+     * @param f 
+     */
     public Sin(Value f) {
         this.f = f;
     }

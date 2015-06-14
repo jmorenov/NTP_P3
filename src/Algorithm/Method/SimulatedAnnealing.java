@@ -1,22 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithm.Method;
 
 import Function.*;
 
 /**
- *
- * @author jmorenov
+ * Clase que define el método de Recocido Simulado.
+ * 
+ * @author Javier Moreno <jmorenov@correo.ugr.es>
  */
 public class SimulatedAnnealing extends Method {
 
+    /**
+     * Constructor del método.
+     */
     public SimulatedAnnealing() {
         super();
     }
     
+    /**
+     * Controla la probabilidad de aceptar la nueva solución.
+     * @param energy
+     * @param newEnergy
+     * @param temperature
+     * @return 
+     */
     public static double acceptanceProbability(double energy, double newEnergy, double temperature) {
         // If the new solution is better, accept it
         if (newEnergy > energy) {

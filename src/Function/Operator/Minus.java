@@ -1,20 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Function.Operator;
 
 import Function.Value;
 
 /**
- *
- * @author jmorenov
+ * Clase para crear un operador resta.
+ * 
+ * @author Javier Moreno <jmorenov@correo.ugr.es>
  */
 public class Minus extends Operator {
+    // Valor primero de la resta.
     Value f1;
+    // Valor segundo de la resta.
     Value f2;
     
+    /**
+     * Constructor de la clase.
+     * @param f1
+     * @param f2 
+     */
     public Minus(Value f1, Value f2) {
         this.f1 = f1;
         this.f2 = f2;
