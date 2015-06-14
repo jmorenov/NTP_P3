@@ -108,12 +108,6 @@ public class Function {
     public void Tan(int id) {
         f = new Tan(vars.get(id));
     }
-    /*public void Exp(Function f1) {
-        f = new Exp(f1);
-    }
-    public void Exp(int id) {
-        f = new Exp(vars.get(id));
-    }*/
     
     public double result() {
         return f.result();

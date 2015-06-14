@@ -45,4 +45,8 @@ public class SearchState extends Observable {
     public double getValue() {
         return value;
     }
+    
+    public Function getFunction() {
+        return f;
+    }
 }

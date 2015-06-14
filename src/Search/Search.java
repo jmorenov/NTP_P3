@@ -18,9 +18,18 @@ public class Search {
  
     private final ArrayList<Algorithm> algs = new ArrayList<>();
     private Function f;
+    private double value;
     
     public void setFunction(Function f) {
         this.f = f;
+    }
+    
+    public Function getResult() {
+        return f;
+    }
+    
+    public double getValue() {
+        return value;
     }
     
     public void addAlgorithm(Algorithm alg) {
@@ -35,6 +44,8 @@ public class Search {
         ex.shutdown();
         while(!ex.isTerminated()){
         }
+        this.f = SearchState.getInstance().getFunction();
+        this.value = SearchState.getInstance().getValue();
     }
     
     private class AlgorithmRunnable implements Runnable {

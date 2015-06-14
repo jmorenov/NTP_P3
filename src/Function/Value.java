@@ -5,15 +5,11 @@
  */
 package Function;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author jmorenov
  */
 public abstract class Value {
-    
-    ArrayList<Variable> vars = new ArrayList<>();
     
     @Override
     public abstract String toString();

@@ -25,14 +25,14 @@ public abstract class Method implements Observer {
     }
     
     public void newValue(Function f) {
-        if(f.result() > SearchState.getInstance().getValue())
+        if(f.result() > value)
             SearchState.getInstance().update(f);
     }
     
     @Override
     public void update(Observable o, Object arg) {
         if (o instanceof SearchState) {
-            //value = ((SearchState) o).getValue();
+            value = ((SearchState) o).getValue();
         }
     }
     
